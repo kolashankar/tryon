@@ -1,0 +1,135 @@
+{
+  "identity": {
+    "name": "E1",
+    "persona": "The Anti-AI Designer",
+    "philosophy": "Fusion over Imitation. Emotion First. Content is King. Zoom In. Negative Space. Contrast.",
+    "anti_patterns": [
+      "Purple/Teal primary buttons",
+      "Inter font for headings",
+      "Center-aligned everything",
+      "Gradient overload (>20%)"
+    ]
+  },
+  "project_context": {
+    "app_name": "CultureShift AI",
+    "theme_mode": "dark",
+    "style_archetype": "Electric & Neon (Future, Speed, Disruption)",
+    "description": "A high-energy, dashboard-style SaaS for regional outfit transformation. Dark, immersive, and vibrant.",
+    "target_audience": "Gen Z, Fashion Enthusiasts, Social Media Creators"
+  },
+  "design_system": {
+    "colors": {
+      "palette": {
+        "background": "#030304",
+        "surface": "#0E0E10",
+        "surface_highlight": "#18181B",
+        "primary": "#DFFF00",
+        "primary_foreground": "#000000",
+        "secondary": "#00FFFF",
+        "accent": "#FF00FF",
+        "text_main": "#FFFFFF",
+        "text_muted": "#A1A1AA",
+        "border": "#27272A",
+        "success": "#22C55E",
+        "error": "#EF4444"
+      },
+      "usage": {
+        "body_bg": "bg-[#030304]",
+        "card_bg": "bg-[#0E0E10]",
+        "primary_btn": "bg-[#DFFF00] text-black hover:bg-[#EFFF50]",
+        "secondary_btn": "bg-[#18181B] text-white border border-[#27272A] hover:border-[#DFFF00]",
+        "accent_text": "text-[#DFFF00]"
+      }
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Syne, sans-serif",
+        "body": "Space Grotesk, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9]",
+        "h2": "text-3xl md:text-4xl font-bold tracking-tight",
+        "h3": "text-xl md:text-2xl font-semibold",
+        "body": "text-base leading-relaxed text-[#A1A1AA]",
+        "label": "text-xs font-mono uppercase tracking-widest text-[#DFFF00]"
+      },
+      "imports": [
+        "https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap"
+      ]
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-12 lg:p-16",
+      "section_gap": "gap-8 md:gap-12",
+      "element_gap": "gap-4",
+      "radius": "rounded-none md:rounded-2xl"
+    },
+    "effects": {
+      "glass": "bg-black/40 backdrop-blur-xl border border-white/10",
+      "neon_glow": "shadow-[0_0_20px_rgba(223,255,0,0.3)]",
+      "card_hover": "hover:border-[#DFFF00] transition-colors duration-300",
+      "micro_interaction": "active:scale-95 transition-transform duration-100"
+    }
+  },
+  "layout_strategy": {
+    "type": "Bento Grid Dashboard",
+    "structure": "Split Screen / Dense Grid",
+    "grid_config": "grid grid-cols-1 lg:grid-cols-12 gap-6 h-screen overflow-hidden",
+    "areas": {
+      "sidebar": "lg:col-span-4 flex flex-col gap-6 overflow-y-auto p-6 bg-[#0E0E10] border-r border-[#27272A]",
+      "main_canvas": "lg:col-span-8 relative flex items-center justify-center bg-[#030304] p-6"
+    }
+  },
+  "components": {
+    "RegionSelector": {
+      "type": "Visual Grid",
+      "style": "Grid of square cards. Each card has an icon/flag and text. Active state: #DFFF00 border + Glow.",
+      "interaction": "Click to select. Smooth scale animation on hover."
+    },
+    "StyleSelector": {
+      "type": "Horizontal Scroll / Pill List",
+      "style": "Pill-shaped buttons or small cards. Active: Filled #DFFF00 (Text Black). Inactive: Outlined (Text White).",
+      "interaction": "Snap scroll. Hover lifts element."
+    },
+    "ComparisonSlider": {
+      "type": "Interactive Handle",
+      "style": "Full height image container. Draggable handle in the middle (Neon line).",
+      "library": "react-compare-slider (Recommended) or Custom",
+      "fallback": "Side-by-side images if library fails"
+    },
+    "GenerateButton": {
+      "type": "Massive CTA",
+      "style": "Full width, h-16, bold text, neon background. Loading state: pulsing gradient or glitch effect.",
+      "text": "TRANSFORM REALITY"
+    },
+    "UploadZone": {
+      "type": "Minimalist Dashed Area",
+      "style": "Border-dashed border-2 border-[#27272A] hover:border-[#DFFF00] rounded-xl flex flex-col items-center justify-center h-64 transition-all",
+      "content": "Drag & Drop or Click. Support: JPG, PNG."
+    }
+  },
+  "assets": {
+    "icons": "Lucide React (Default). Use bold strokes (2px+).",
+    "images": {
+      "placeholder_portrait": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop",
+      "placeholder_texture": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop"
+    }
+  },
+  "animations": {
+    "library": "framer-motion",
+    "preferences": {
+      "page_load": "Staggered fade-in + slide-up for dashboard panels.",
+      "hover": "Scale 1.02 + Glow.",
+      "generation": "Scanline effect or Glitch animation during 'Processing'."
+    }
+  },
+  "universal_guidelines": [
+    "Do NOT use gradients for the main background. Use solid #030304 or subtle noise.",
+    "Ensure the 'Before' and 'After' images align perfectly for the slider to work.",
+    "Use 'Sonner' for toasts (error/success messages).",
+    "Input fields should have a distinct focus state (Neon Border).",
+    "Avoid 'Inter' font. Use 'Space Grotesk' for body text.",
+    "Keep the UI 'App-like' (no scroll on body, scroll inside containers)."
+  ],
+  "instructions_to_main_agent": "1. Install dependencies: `framer-motion`, `clsx`, `tailwind-merge`, `lucide-react`, `sonner`. \n2. Configure Tailwind with the provided colors and fonts. \n3. Build the 'Dashboard Layout' first (Sidebar + Main Area). \n4. Implement the 'Upload' and 'Comparison' logic. \n5. Use the provided Unsplash URLs for demo/placeholder states. \n6. Mock the 'Gemini Generation' with a `setTimeout` if the API isn't ready, but structure it for real integration."
+}

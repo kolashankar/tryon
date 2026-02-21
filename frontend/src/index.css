@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #030304;
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+}
+
+code {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+    :root {
+        --background: 3 3 4;
+        --foreground: 255 255 255;
+        --card: 14 14 16;
+        --card-foreground: 255 255 255;
+        --popover: 14 14 16;
+        --popover-foreground: 255 255 255;
+        --primary: 223 255 0;
+        --primary-foreground: 0 0 0;
+        --secondary: 0 255 255;
+        --secondary-foreground: 0 0 0;
+        --muted: 24 24 27;
+        --muted-foreground: 161 161 170;
+        --accent: 255 0 255;
+        --accent-foreground: 0 0 0;
+        --destructive: 239 68 68;
+        --destructive-foreground: 255 255 255;
+        --border: 39 39 42;
+        --input: 39 39 42;
+        --ring: 223 255 0;
+        --radius: 1rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-[#030304] text-foreground;
+    }
+}
+
+@layer utilities {
+    .neon-glow {
+        box-shadow: 0 0 20px rgba(223, 255, 0, 0.3);
+    }
+    
+    .neon-text {
+        text-shadow: 0 0 10px rgba(223, 255, 0, 0.5);
+    }
+    
+    .glass-effect {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0E0E10;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #27272A;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #DFFF00;
+}
